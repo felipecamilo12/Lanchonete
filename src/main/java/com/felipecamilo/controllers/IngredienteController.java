@@ -16,8 +16,6 @@ import com.felipecamilo.dtos.IngredienteDTO;
 import com.felipecamilo.services.IngredienteService;
 
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
@@ -37,9 +35,6 @@ public class IngredienteController {
 
 	@PostMapping("/save")
 	@ApiOperation(value = "Salva um ingrediente")
-	@ApiImplicitParams({
-		@ApiImplicitParam(name = "id")
-	})
 	public ResponseEntity<IngredienteDTO> save(@RequestBody IngredienteDTO ingredienteDTO){
 		ingredienteService.save(ingredienteDTO);
 		return new ResponseEntity<>(HttpStatus.OK);

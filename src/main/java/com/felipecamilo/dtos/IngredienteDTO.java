@@ -2,20 +2,15 @@ package com.felipecamilo.dtos;
 
 import java.math.BigDecimal;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel
 public class IngredienteDTO {
 	
-	@ApiModelProperty(name = "id", example = "")
 	private Long id;
 	private String nome;
 	private BigDecimal preco;
 	
-	@JsonIgnore
 	private BigDecimal quantidade;
 	
 	public IngredienteDTO() {
