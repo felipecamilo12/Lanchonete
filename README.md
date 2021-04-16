@@ -34,58 +34,58 @@ Projeto rodando na porta padrão (8080).
 
 ## Exemplos de requests
 ### GET
-Endpoint: localhost:8080/ingredientes
-Endpoint: localhost:8080/lanches
-Endpoint: localhost:8080/pedidos
+- Endpoint: localhost:8080/ingredientes
+- Endpoint: localhost:8080/lanches
+- Endpoint: localhost:8080/pedidos
 
 ### POST
 #### Ingredientes
-Endpoint: localhost:8080/ingredientes/save
-Json: {"nome":"Alface","preco":0.40}
+- Endpoint: localhost:8080/ingredientes/save
+- Json: {"nome":"Alface","preco":0.40}
 
-Endpoint: localhost:8080/ingredientes/save
-Json: {"nome":"Bacon","preco":2.00}
+- Endpoint: localhost:8080/ingredientes/save
+- Json: {"nome":"Bacon","preco":2.00}
 
-Endpoint: localhost:8080/ingredientes/save
-Json: {"nome":"Hamburger","preco":3.00}
+- Endpoint: localhost:8080/ingredientes/save
+- Json: {"nome":"Hamburger","preco":3.00}
 
-Endpoint: localhost:8080/ingredientes/save
-Json: {"nome":"Ovo","preco":0.80}
+- Endpoint: localhost:8080/ingredientes/save
+- Json: {"nome":"Ovo","preco":0.80}
 
-Endpoint: localhost:8080/ingredientes/save
-Json: {"nome":"Queijo","preco":1.50}
+- Endpoint: localhost:8080/ingredientes/save
+- Json: {"nome":"Queijo","preco":1.50}
 
 #### Lanches
-Endpoint: localhost:8080/lanches/save
-Json: 
+- Endpoint: localhost:8080/lanches/save
+- Json: 
 {
     "nome": "X-Bacon",
     "ingredientesDTO":[{"id":2,"nome":"Bacon", "quantidade":1},{"id":3,"nome":"Hamburger", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}]
 }
 
-Endpoint: localhost:8080/lanches/save
-Json: 
+- Endpoint: localhost:8080/lanches/save
+- Json: 
 {
     "nome": "X-Burger",
     "ingredientesDTO":[{"id":3,"nome":"Hamburger", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}]
 }
 
-Endpoint: localhost:8080/lanches/save
-Json: 
+- Endpoint: localhost:8080/lanches/save
+- Json: 
 {
     "nome": "X-Egg",
     "ingredientesDTO":[{"id":3,"nome":"Hamburger", "quantidade":1},{"id":4,"nome":"Ovo", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}]
 }
 
-Endpoint: localhost:8080/lanches/save
-Json: 
+- Endpoint: localhost:8080/lanches/save
+- Json: 
 {
     "nome": "X-Egg Bacon",
     "ingredientesDTO":[{"id":3,"nome":"Hamburger", "quantidade":1},{"id":4,"nome":"Ovo", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}, {"id":"2", "nome":"Bacon", "quantidade":1}]
 }
 
-Endpoint: localhost:8080/lanches/save
-Json: 
+- Endpoint: localhost:8080/lanches/save
+- Json: 
 {
     "nome": "X-Personalizado",
     "ingredientesDTO":[
@@ -94,8 +94,8 @@ Json:
         {"id":5,"nome":"Queijo","quantidade":"1"}]
 }
 
-Endpoint: localhost:8080/lanches/save
-Json: 
+- Endpoint: localhost:8080/lanches/save
+- Json: 
 {
     "nome": "X-Personalizado-Light",
     "ingredientesDTO":[
@@ -104,8 +104,8 @@ Json:
         {"id":5,"nome":"Queijo","quantidade":1}]
 }
 
-Endpoint: localhost:8080/lanches/save
-Json: 
+- Endpoint: localhost:8080/lanches/save
+- Json: 
 {
     "nome": "X-Personalizado-MuitaCarne",
     "ingredientesDTO":[
@@ -114,8 +114,8 @@ Json:
         {"id":5,"nome":"Queijo","quantidade":1}]
 }
 
-Endpoint: localhost:8080/lanches/save
-Json: 
+- Endpoint: localhost:8080/lanches/save
+- Json: 
 {
     "nome": "X-Personalizado-MuitoQueijo",
     "ingredientesDTO":[
@@ -125,8 +125,8 @@ Json:
 }
 
 ### Pedidos
-Endpoint: localhost:8080/pedidos/save
-Json: 
+- Endpoint: localhost:8080/pedidos/save
+- Json: 
 {
     "id": 1,
     "lanches":[
