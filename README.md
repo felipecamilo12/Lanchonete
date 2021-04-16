@@ -41,18 +41,15 @@ Projeto rodando na porta padrão (8080).
 ### POST
 #### Ingredientes
 - Endpoint: localhost:8080/ingredientes/save
+
 - Json: {"nome":"Alface","preco":0.40}
 
-- Endpoint: localhost:8080/ingredientes/save
 - Json: {"nome":"Bacon","preco":2.00}
 
-- Endpoint: localhost:8080/ingredientes/save
 - Json: {"nome":"Hamburger","preco":3.00}
 
-- Endpoint: localhost:8080/ingredientes/save
 - Json: {"nome":"Ovo","preco":0.80}
 
-- Endpoint: localhost:8080/ingredientes/save
 - Json: {"nome":"Queijo","preco":1.50}
 
 #### Lanches
@@ -63,28 +60,24 @@ Projeto rodando na porta padrão (8080).
     "ingredientesDTO":[{"id":2,"nome":"Bacon", "quantidade":1},{"id":3,"nome":"Hamburger", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}]
 }
 
-- Endpoint: localhost:8080/lanches/save
 - Json: 
 {
     "nome": "X-Burger",
     "ingredientesDTO":[{"id":3,"nome":"Hamburger", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}]
 }
 
-- Endpoint: localhost:8080/lanches/save
 - Json: 
 {
     "nome": "X-Egg",
     "ingredientesDTO":[{"id":3,"nome":"Hamburger", "quantidade":1},{"id":4,"nome":"Ovo", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}]
 }
 
-- Endpoint: localhost:8080/lanches/save
 - Json: 
 {
     "nome": "X-Egg Bacon",
     "ingredientesDTO":[{"id":3,"nome":"Hamburger", "quantidade":1},{"id":4,"nome":"Ovo", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}, {"id":"2", "nome":"Bacon", "quantidade":1}]
 }
 
-- Endpoint: localhost:8080/lanches/save
 - Json: 
 {
     "nome": "X-Personalizado",
@@ -94,7 +87,6 @@ Projeto rodando na porta padrão (8080).
         {"id":5,"nome":"Queijo","quantidade":"1"}]
 }
 
-- Endpoint: localhost:8080/lanches/save
 - Json: 
 {
     "nome": "X-Personalizado-Light",
@@ -104,7 +96,6 @@ Projeto rodando na porta padrão (8080).
         {"id":5,"nome":"Queijo","quantidade":1}]
 }
 
-- Endpoint: localhost:8080/lanches/save
 - Json: 
 {
     "nome": "X-Personalizado-MuitaCarne",
@@ -114,7 +105,6 @@ Projeto rodando na porta padrão (8080).
         {"id":5,"nome":"Queijo","quantidade":1}]
 }
 
-- Endpoint: localhost:8080/lanches/save
 - Json: 
 {
     "nome": "X-Personalizado-MuitoQueijo",
