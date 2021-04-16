@@ -114,7 +114,7 @@ Projeto rodando na porta padrão (8080).
         {"id":5,"nome":"Queijo","quantidade":3}]
 }
 
-### Pedidos
+#### Pedidos
 - Endpoint: localhost:8080/pedidos/save
 - Json: 
 {
@@ -129,3 +129,41 @@ Projeto rodando na porta padrão (8080).
     {"id":7,"nome":"X-Personalizado Muita Carne"},
     {"id":8,"nome":"X-Personalizado Muito Queijo"}]
 }
+
+### PUT
+#### Ingrediente
+- Endpoint: http://localhost:8080/ingredientes/update
+- Json:
+{
+  "id": 1,
+  "nome": "Alface",
+  "preco": 1.0
+}
+
+#### Lanche
+- Endpoint: http://localhost:8080/lanches/update
+- Json:
+{
+    "id": 1,
+    "nome": "X-Egg",
+    "ingredientesDTO":[{"id":3,"nome":"Hamburger", "quantidade":1},{"id":4,"nome":"Ovo", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}]
+}
+
+#### Pedido
+- Endpoint: localhost:8080/pedidos/save
+- Json:
+{
+    "id": 1,
+    "nome": "X-Egg",
+    "ingredientesDTO":[{"id":3,"nome":"Hamburger", "quantidade":1},{"id":4,"nome":"Ovo", "quantidade":1},{"id":5,"nome":"Queijo", "quantidade":1}]
+}
+
+### Delete
+#### Ingrediente
+- Endpoint: http://localhost:8080/ingredientes/1
+
+#### Lanche
+- Endpoint: http://localhost:8080/lanches/1
+
+#### Pedido
+- Endpoint: http://localhost:8080/pedidos/1
