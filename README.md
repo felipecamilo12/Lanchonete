@@ -32,8 +32,8 @@
 ## Instruções Gerais
 Projeto rodando na porta padrão (8080).
 
-##Exemplos de requests
-###GET
+## Exemplos de requests
+### GET
 Endpoint: localhost:8080/ingredientes
 Endpoint: localhost:8080/lanches
 Endpoint: localhost:8080/pedidos
