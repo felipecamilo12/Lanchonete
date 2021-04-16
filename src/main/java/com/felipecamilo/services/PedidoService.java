@@ -21,15 +21,16 @@ public class PedidoService {
 
 	@Autowired
 	private PedidoRepository pedidoRepository;
-	
+
 	@Autowired
 	private LancheService lancheService;
-	
-	public List<PedidoDTO> findAll(){
+
+	public List<PedidoDTO> findAll() {
 		List<PedidoDTO> pedidosDTO = new ArrayList<>();
 		List<Pedido> pedidos = pedidoRepository.findAll();
 		for (Pedido pedido : pedidos) {
-			Function<Lanche, LancheDTO> lancheToLancheDTO = (lanche) -> new LancheDTO(lanche.getId(), lanche.getNome(), lanche.getPreco());
+			Function<Lanche, LancheDTO> lancheToLancheDTO = (lanche) -> new LancheDTO(lanche.getId(), lanche.getNome(),
+					lanche.getPreco());
 			List<LancheDTO> lanchesDTO = pedido.getLanches().stream().map(lancheToLancheDTO)
 					.collect(Collectors.toList());
 			PedidoDTO pedidoDTO = new PedidoDTO(pedido.getId(), pedido.getPreco(), lanchesDTO);
@@ -37,17 +38,17 @@ public class PedidoService {
 		}
 		return pedidosDTO;
 	}
-	
-	public Optional<Pedido> findById(Long id){
+
+	public Optional<Pedido> findById(Long id) {
 		return pedidoRepository.findById(id);
 	}
-	
+
 	public void save(PedidoDTO pedidoDTO) {
 		Pedido pedido = new Pedido();
 		pedido.setPreco(new BigDecimal("0.0"));
 		for (LancheDTO lancheDTO : pedidoDTO.getLanches()) {
 			Optional<Lanche> lanche = lancheService.findById(lancheDTO.getId());
-			if(lanche.isPresent()) {
+			if (lanche.isPresent()) {
 				pedido.addLanche(lanche.get());
 				pedido.setPreco(pedido.getPreco().add(lanche.get().getPreco()));
 			}
@@ -56,11 +57,24 @@ public class PedidoService {
 	}
 
 	public void update(PedidoDTO pedidoDTO) {
-		
+		Optional<Pedido> pedidoOptional = pedidoRepository.findById(pedidoDTO.getId());
+		if (pedidoOptional.isPresent()) {
+			Pedido pedido = pedidoOptional.get();
+			pedido.setPreco(new BigDecimal("0.0"));
+			pedido.getLanches().clear();
+			for (LancheDTO lancheDTO : pedidoDTO.getLanches()) {
+				Optional<Lanche> lanche = lancheService.findById(lancheDTO.getId());
+				if (lanche.isPresent()) {
+					pedido.addLanche(lanche.get());
+					pedido.setPreco(pedido.getPreco().add(lanche.get().getPreco()));
+				}
+			}
+			pedidoRepository.save(pedido);
+		}
 	}
 
 	public void delete(Long id) {
 		pedidoRepository.deleteById(id);
 	}
-	
+
 }

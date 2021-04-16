@@ -122,8 +122,9 @@ public class LancheService {
 			Lanche lanche = lancheOptional.get();
 			lanche.setNome(lancheDTO.getNome());
 			lanche.setPreco(new BigDecimal("0.0"));
-			// lanche.setIngredientes(new ArrayList<>());
 			adicionarIngrediente(lancheDTO, lanche);
+			calcularPreco(lancheDTO, lanche);
+			aplicaPromocao(lancheDTO, lanche);
 			lancheRepository.save(lanche);
 		}
 	}
