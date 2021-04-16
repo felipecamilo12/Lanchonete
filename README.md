@@ -30,8 +30,8 @@
 
 
 ## Instruções Gerais
-Projeto rodando na porta padrão (8080).
-O projeto esta configurado para gerar as tabelas do bando de dados e assim que aplicação é finalizada ele exclui. Para alterar essa funcionalidade, pode ser alterado o campo "spring.jpa.hibernate.ddl-auto=create-drop" do aplication.properties para "spring.jpa.hibernate.ddl-auto=update".
+- Projeto rodando na porta padrão (8080).
+- O projeto esta configurado para gerar as tabelas do bando de dados e assim que aplicação é finalizada ele exclui. Para alterar essa funcionalidade, pode ser alterado o campo "spring.jpa.hibernate.ddl-auto=create-drop" do aplication.properties para "spring.jpa.hibernate.ddl-auto=update".
 
 ## Exemplos de requests
 ### GET
