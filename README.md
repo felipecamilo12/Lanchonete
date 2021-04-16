@@ -1,14 +1,14 @@
 # Lanchonete
 
-##Melhorias
+## Melhorias
 Tratamento de erros
 Implementar o docker (Docker da aplicação e Docker do Banco de Dados)
 
-##Instruções Banco de Dados
+## Instruções Banco de Dados
 Precisa do MySQL instalado e nele uma base de dados com nome "lanchonete".
 Credenciais configuradas para o MySQL: "Username: root", "Password: root".
 
-##Instruções Segurança
+## Instruções Segurança
 A segurança foi implementada para funcionar com o uso de um token Bearer.
 Antes de fazer qualquer requisição, devemos estar autenticados.
 Para realizar a autenticação: 
@@ -29,7 +29,7 @@ Para realizar a autenticação:
 Obs: no caso de uso do Postman, colocamos "Bearer Token" no campo de Authorization e entramos com o token sem a palavra Bearer no inicio.
 
 
-##Instruções Gerais
+## Instruções Gerais
 Projeto rodando na porta padrão (8080).
 
 ##Exemplos de requests
@@ -38,8 +38,8 @@ Endpoint: localhost:8080/ingredientes
 Endpoint: localhost:8080/lanches
 Endpoint: localhost:8080/pedidos
 
-###POST
-####Ingredientes
+### POST
+#### Ingredientes
 Endpoint: localhost:8080/ingredientes/save
 Json: {"nome":"Alface","preco":0.40}
 
@@ -55,7 +55,7 @@ Json: {"nome":"Ovo","preco":0.80}
 Endpoint: localhost:8080/ingredientes/save
 Json: {"nome":"Queijo","preco":1.50}
 
-####Lanches
+#### Lanches
 Endpoint: localhost:8080/lanches/save
 Json: 
 {
@@ -124,7 +124,7 @@ Json:
         {"id":5,"nome":"Queijo","quantidade":3}]
 }
 
-###Pedidos
+### Pedidos
 Endpoint: localhost:8080/pedidos/save
 Json: 
 {
