@@ -5,14 +5,13 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,19 +21,15 @@ public class Lanche implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
 	private Long id;
 
-	@Column(name = "Nome")
 	private String nome;
 
-	@Column(name = "Preco")
 	private BigDecimal preco;
 
-	@ManyToMany
-	@JoinTable(name = "lanche_ingrediente", joinColumns = @JoinColumn(name = "lanche_id"), inverseJoinColumns = @JoinColumn(name = "ingrediente_id"))
-	private List<Ingrediente> ingredientes;
-
+	@OneToMany(mappedBy = "lanche", cascade = CascadeType.ALL)
+	private List<LancheIngrediente> lancheIngredientes;
+	
 	@ManyToMany(mappedBy = "lanches")
 	private List<Pedido> pedidos;
 
@@ -46,19 +41,21 @@ public class Lanche implements Serializable {
 		this.id = id;
 	}
 
-	public List<Ingrediente> getIngredientes() {
-		return ingredientes;
+	public List<LancheIngrediente> getLancheIngredientes() {
+		return lancheIngredientes;
 	}
 
-	public void setIngredientes(List<Ingrediente> ingredientes) {
-		this.ingredientes = ingredientes;
+	public void setLancheIngredientes(List<LancheIngrediente> ingredientes) {
+		this.lancheIngredientes = ingredientes;
 	}
 
-	public void addIngrediente(Ingrediente ingrediente) {
-		if (ingredientes == null) {
-			ingredientes = new ArrayList<>();
+	public void addIngrediente(Ingrediente ingrediente, BigDecimal quantidade) {
+		if (lancheIngredientes == null) {
+			lancheIngredientes = new ArrayList<>();
 		}
-		ingredientes.add(ingrediente);
+		LancheIngrediente lancheIngrediente = new LancheIngrediente(this, ingrediente, quantidade);
+		lancheIngrediente.setId(new LancheIngredienteChaveComposta(this.getId(),ingrediente.getId()));
+		lancheIngredientes.add(lancheIngrediente);
 	}
 
 	public String getNome() {

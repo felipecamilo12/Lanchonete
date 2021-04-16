@@ -44,7 +44,7 @@ public class PedidoService {
 	
 	public void save(PedidoDTO pedidoDTO) {
 		Pedido pedido = new Pedido();
-		pedido.setPreco(new BigDecimal(0.0));
+		pedido.setPreco(new BigDecimal("0.0"));
 		for (LancheDTO lancheDTO : pedidoDTO.getLanches()) {
 			Optional<Lanche> lanche = lancheService.findById(lancheDTO.getId());
 			if(lanche.isPresent()) {
@@ -60,7 +60,7 @@ public class PedidoService {
 	}
 
 	public void delete(Long id) {
-		
+		pedidoRepository.deleteById(id);
 	}
 	
 }

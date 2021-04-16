@@ -2,7 +2,9 @@ package com.felipecamilo.dtos;
 
 import java.math.BigDecimal;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
 
+@ApiModel
 public class PedidoDTO {
 
 	private Long id;

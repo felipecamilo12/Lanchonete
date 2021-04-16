@@ -9,9 +9,9 @@ public class IngredienteDTO {
 	
 	private Long id;
 	private String nome;
-	private BigDecimal preco;
+	private BigDecimal preco = BigDecimal.ZERO;
 	
-	private BigDecimal quantidade;
+	private BigDecimal quantidade = BigDecimal.ZERO;
 	
 	public IngredienteDTO() {
 	}

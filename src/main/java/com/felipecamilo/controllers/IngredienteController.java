@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +23,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/ingredientes")
-@Api(value = "API REST Ingredientes")
+@Api(value = "API REST Ingrediente")
 @CrossOrigin(origins="*")
 public class IngredienteController {
 
@@ -40,17 +43,17 @@ public class IngredienteController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	@PostMapping("/update")
+	@PutMapping("/update")
 	@ApiOperation(value = "Atualiza um ingrediente")
 	public ResponseEntity<IngredienteDTO> update(@RequestBody IngredienteDTO ingredienteDTO){
 		ingredienteService.update(ingredienteDTO);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	@PostMapping("/delete")
+	@DeleteMapping("/{id}")
 	@ApiOperation(value = "Deleta um ingrediente")
-	public ResponseEntity<IngredienteDTO> delete(@RequestBody IngredienteDTO ingredienteDTO){
-		ingredienteService.delete(ingredienteDTO.getId());
+	public ResponseEntity<IngredienteDTO> delete(@PathVariable(value = "id") Long idIngrediente){
+		ingredienteService.delete(idIngrediente);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	

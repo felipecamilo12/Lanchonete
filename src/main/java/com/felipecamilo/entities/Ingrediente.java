@@ -2,13 +2,11 @@ package com.felipecamilo.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,9 +20,6 @@ public class Ingrediente implements Serializable {
 
 	private String nome;
 	private BigDecimal preco;
-
-	@ManyToMany(mappedBy = "ingredientes")
-	private List<Lanche> lanches;
 
 	public Long getId() {
 		return id;
@@ -48,14 +43,6 @@ public class Ingrediente implements Serializable {
 
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
-	}
-
-	public List<Lanche> getLanches() {
-		return lanches;
-	}
-
-	public void setLanches(List<Lanche> lanches) {
-		this.lanches = lanches;
 	}
 
 }

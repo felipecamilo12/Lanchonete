@@ -3,6 +3,9 @@ package com.felipecamilo.dtos;
 import java.math.BigDecimal;
 import java.util.List;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel
 public class LancheDTO {
 
 	private Long id;
