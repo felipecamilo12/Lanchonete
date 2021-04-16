@@ -1,17 +1,17 @@
 # Lanchonete
 
 ## Melhorias
-Tratamento de erros
-Implementar o docker (Docker da aplicação e Docker do Banco de Dados)
+- Tratamento de erros
+- Implementar o docker (Docker da aplicação e Docker do Banco de Dados)
 
 ## Instruções Banco de Dados
-Precisa do MySQL instalado e nele uma base de dados com nome "lanchonete".
-Credenciais configuradas para o MySQL: "Username: root", "Password: root".
+- Precisa do MySQL instalado e nele uma base de dados com nome "lanchonete".
+- Credenciais configuradas para o MySQL: "Username: root", "Password: root".
 
 ## Instruções Segurança
-A segurança foi implementada para funcionar com o uso de um token Bearer.
-Antes de fazer qualquer requisição, devemos estar autenticados.
-Para realizar a autenticação: 
+- A segurança foi implementada para funcionar com o uso de um token Bearer.
+- Antes de fazer qualquer requisição, devemos estar autenticados.
+### Para realizar a autenticação: 
 1 - Entre no endereço http://localhost:8080/swagger-ui.html
 2 - Clique em "jwt-autenticacao-controller" e em seguida em "POST /authenticate"
 3 - No campo authenticationRequest, entre com o Json abaixo e clique no botão "Try id out!" 
