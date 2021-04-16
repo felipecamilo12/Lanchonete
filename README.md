@@ -12,21 +12,21 @@
 - A segurança foi implementada para funcionar com o uso de um token Bearer.
 - Antes de fazer qualquer requisição, devemos estar autenticados.
 ### Para realizar a autenticação: 
-1 - Entre no endereço http://localhost:8080/swagger-ui.html
-2 - Clique em "jwt-autenticacao-controller" e em seguida em "POST /authenticate"
-3 - No campo authenticationRequest, entre com o Json abaixo e clique no botão "Try id out!" 
-{
-  "password": "password",
-  "username": "user"
-}
-4 - Copie o token gerado no campo Response Body 
-{
-  "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjE4NjAwNjc2LCJpYXQiOjE2MTg1ODI2NzZ9.8-qHfrRr3JjODu2QkYeVAeA0OtHIkEKWuMaGP0gFSYzwXodraRuS9pfD_VpT2O1vzd3Xh2Nysp_ccvSPGzFbIw"
-}
-5 - Clique no botão Authorize no topo da pagina e entre com o token copiado e adicione a palavra Bearer no inicio, conforme o exemplo abaixo
-"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjE4NjAwNjc2LCJpYXQiOjE2MTg1ODI2NzZ9.8-qHfrRr3JjODu2QkYeVAeA0OtHIkEKWuMaGP0gFSYzwXodraRuS9pfD_VpT2O1vzd3Xh2Nysp_ccvSPGzFbIw"
-6 - Clique no Botão Authorize e pronto, ja pode usar os endpoints documentados no Swagger.
-Obs: no caso de uso do Postman, colocamos "Bearer Token" no campo de Authorization e entramos com o token sem a palavra Bearer no inicio.
+- 1 - Entre no endereço http://localhost:8080/swagger-ui.html
+- 2 - Clique em "jwt-autenticacao-controller" e em seguida em "POST /authenticate"
+- 3 - No campo authenticationRequest, entre com o Json abaixo e clique no botão "Try id out!" 
+  {
+    "password": "password",
+    "username": "user"
+  }
+- 4 - Copie o token gerado no campo Response Body 
+  {
+   "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjE4NjAwNjc2LCJpYXQiOjE2MTg1ODI2NzZ9.8-qHfrRr3JjODu2QkYeVAeA0OtHIkEKWuMaGP0gFSYzwXodraRuS9pfD_VpT2O1vzd3Xh2Nysp_ccvSPGzFbIw"
+  }
+- 5 - Clique no botão Authorize no topo da pagina e entre com o token copiado e adicione a palavra Bearer no inicio, conforme o exemplo abaixo
+  "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjE4NjAwNjc2LCJpYXQiOjE2MTg1ODI2NzZ9.8-qHfrRr3JjODu2QkYeVAeA0OtHIkEKWuMaGP0gFSYzwXodraRuS9pfD_VpT2O1vzd3Xh2Nysp_ccvSPGzFbIw"
+- 6 - Clique no Botão Authorize e pronto, ja pode usar os endpoints documentados no Swagger.
+- Obs: no caso de uso do Postman, colocamos "Bearer Token" no campo de Authorization e entramos com o token sem a palavra Bearer no inicio.
 
 
 ## Instruções Gerais
